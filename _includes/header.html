@@ -1,0 +1,77 @@
+<!-- start #header -->
+<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1 style="text-transform:capitalize"><a href="#"> Qcer  </a></h1>
+				<span>
+				<b><p>Sometimes you win,Sometimes you learn !</p></b>
+			</div>
+			<div id="menu">
+				<ul>
+					
+					{% if page.path	== "index.html" %}
+					<span class="title">
+						<li class="current_page_item">
+							<a href="{{"/index.html "| prepend: site.baseurl}}">Home</a>
+						</li>
+					</span>			
+					{% else %}
+						<li>
+							<a href="{{"/index.html "| prepend: site.baseurl}}">Home</a>
+						</li>			
+					{% endif %}
+					
+					{% if page.path	=="archive.html" %}
+					<span class="title">
+						<li class="current_page_item">
+							<a href="{{"/archive.html "| prepend: site.baseurl}}">Archive</a>
+						</li>
+					</span>			
+					{% else %}
+						<li>
+							<a href="{{"/archive.html "| prepend: site.baseurl}}">Archive</a>
+						</li>			
+					{% endif %}
+					
+					{% if page.path	== "photos.html" %}
+					<span class="title">
+						<li class="current_page_item">
+							<a href="{{"/photos.html "| prepend: site.baseurl}}">Photos</a>
+						</li>
+					</span>			
+					{% else %}
+						<li>
+							<a href="{{"/photos.html "| prepend: site.baseurl}}">Photos</a>
+						</li>			
+					{% endif %}
+					
+					{% if page.path	== "about.html" %}
+					<span class="title">
+						<li class="current_page_item">
+							<a href="{{"/about.html "| prepend: site.baseurl}}">About</a>
+						</li>
+					</span>			
+					{% else %}
+						<li>
+							<a href="{{"/about.html "| prepend: site.baseurl}}">About</a>
+						</li>			
+					{% endif %}
+					
+					
+					{% if page.path	== "contacts.html" %}
+					<span class="title">
+						<li class="current_page_item">
+							<a href="{{"/contacts.html "| prepend: site.baseurl}}">Contacts</a>
+						</li>
+					</span>			
+					{% else %}
+						<li>
+							<a href="{{"/contacts.html "| prepend: site.baseurl}}">Contacts</a>
+						</li>			
+					{% endif %}
+					
+				</ul>
+			</div>
+		</div>
+</div>
+<!-- end #header -->
