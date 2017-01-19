@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 #### **一 、《D is for digital》**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/1.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/1.jpg" width="25%" height="25%"/>
 
 　　记得以前关注的某位博主也在博文中提到这本书。
 
@@ -16,7 +16,7 @@ categories: jekyll update
 
 #### **二 、《Traps and Pitfalls》**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/2.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/2.jpg" width="180" height="230"/>
 
 　　当然作为学C语言横竖都避不了、躲不开、绕不过的书，想必有它存在的价值。
 
@@ -42,7 +42,7 @@ categories: jekyll update
 
 #### **四、《数学之美》 ----by吴军**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/4.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/4.jpg" width="25%" height="25%"/>
 
 　　首先作者很牛X呀。
 
@@ -68,7 +68,7 @@ categories: jekyll update
 
 #### **五、《算法设计与分析基础》----by清华**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/5.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/5.jpg" width="25%" height="25%"/>
 
 　　不得不说是很好的算法学习书籍，思路很清晰，在算法思想上给了我很多的启迪。
 
@@ -86,13 +86,13 @@ categories: jekyll update
 
 #### **六、《数据结构基础》  ----by清华**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/7.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/7.jpg" width="25%" height="25%"/>
 
 　　上面有提到这本，里面的算法大都有详细的代码实现，可作为学习过程中的场景切换（为什么这么说呢，因为一本书，总有那么三五个坑（事实上大都是自己挖的坑）跳进去了爬不出来，这时候切换到另一本书，往往能搞定它。何也？思考的角度使然）。
 
 #### **七、《啊哈！算法》**
 
-![qc](https://qcer.github.io/blog/images_blog/read_books01/8.jpg)
+<img src="https://qcer.github.io/blog/images_blog/read_books01/8.jpg" width="30%" height="30%"/>
 
 　　这本书是在逛图书馆是看见的（笔者周期性逛图书馆癖好发作），作者似乎也还比较牛X，其实里面很多算法都已经看过，但还是借了回来。
 
