@@ -6,7 +6,7 @@
  
 You can visit it via [https://qcer.github.io/blog/](https://qcer.github.io/blog/).
 
-Do feel free to give me some suggetsion.
+Do feel free to give me some suggestion.
 
 Thanks for yuor visit!
  
