@@ -3,3 +3,10 @@
 
  - Just for fun!
  - And recording something 4m!
+ 
+You can visit it via [https://qcer.github.io/blog/](https://qcer.github.io/blog/).
+
+Do feel free to give me some suggetsion.
+
+Thanks for yuor visit!
+ 
