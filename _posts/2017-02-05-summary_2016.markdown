@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ON THE WAY -2016总结"
+title:  "on the way,2016总结"
 date:   2017-02-05
 categories: jekyll update
 ---
