@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "On The Way,2016总结"
+title:  "On The Way-2016总结"
 date:   2017-02-05
 categories: jekyll update
 ---
@@ -42,6 +42,17 @@ categories: jekyll update
 其实现在想来，也无非就是会玩的命令多那么一点，装的软件多一点，会配置的东西多一点，能够简单的配置Apache和Bind，对Linux不再那么陌生，将之前在学校的理论知识活生生的在现了一遍，仅此而已，但这也足够让我提高不少。
 后来我还特地总结了那段时间学习Liux的学习笔记，共计3万多字，没有全部归纳，里面应有一些众所不周知的干货知识。见百度网盘地址:
 
-链接：http://pan.baidu.com/s/1eSzcdn8 密码：1ll5
+
+***链接: [http://pan.baidu.com/s/1eSzcdn8](http://pan.baidu.com/s/1eSzcdn8) 密码：1ll5***
+
+
+### **四、2017年的几个目标**
+
+- 锻炼，身体要紧
+
+- 希望在TopCoder上实现点愿望
+
+- 一次旅游，最好是香港
+
 
 ### **完**
