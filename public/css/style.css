@@ -1,17 +1,10 @@
-
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
-
 body {
 	margin: 0;
 	padding: 0;
 	background: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #A19D9A;
+	font-size: 14px;
+	color: #3a3a3a;
 }
 
 h1, h2, h3 {
@@ -220,6 +213,7 @@ a:hover {
 .post .title a {
 	color: #333333;
 	border: none;
+	font-size: 28px;
 }
 
 .post .meta {
