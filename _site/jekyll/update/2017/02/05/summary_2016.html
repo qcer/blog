@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Regeneracy   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100529
+-->
+
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> Qcer</title>
+<link href="/blog/public/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/blog/public/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+
+</head>
+
+
+<body>
+<div id="wrapper">
+	<!-- start #header -->
+<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1 style="text-transform:capitalize"><a href="#"> Qcer  </a></h1>
+				<span>
+				<b><p>Sometimes you win,Sometimes you learn !</p></b>
+			</div>
+			<div id="menu">
+				<ul>
+					
+					
+						<li>
+							<a href="/blog/index.html ">Home</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/archive.html ">Archive</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/photos.html ">Photos</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/about.html ">About</a>
+						</li>			
+					
+					
+					
+					
+						<li>
+							<a href="/blog/contacts.html ">Contacts</a>
+						</li>			
+					
+					
+				</ul>
+			</div>
+		</div>
+</div>
+<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				
+					<div class="post">
+  <br>
+  <header class="post-header">
+    <h1 class="post-title">On The Way-2016总结</h1>
+    <p class="post-meta">Feb 5, 2017</p>
+  </header>
+
+  <article class="post-content">
+    <p>过完年，见了想见得朋友，吃了想吃的美食，也想写点想写的东西。。。</p>
+
+<h3 id="一自动化测试"><strong>一、自动化测试</strong>　</h3>
+<p>自动化测试应该说是下半年以来我学习和工作的一个中心，包括后来的一些学习计划都是围绕它拓展开来的。
+讲道理，我之前对自动化测试是很懵逼的（虽然现在也不是特别明明白），但我喜欢写敲代码的感觉，喜欢自己创造的感觉。因为只要求对IE支持兼容，小组用的是Watir开源工具，基于Ruby语言。
+什么东西？Ruby？没听过，学呀。后来顺便就学了Ruby，据说该语言简洁优雅，嗯，写起来好像是这回事。足够简单好上手，当然如果想深入探索，也绝对足够花时间去折腾。
+在后来好奇心使然尝试去研究了一些Watir的源码，当然是有的能看懂，有的任然看不懂。感觉这里面坑还是比较多。其间碰到了一些比较棘手的问题（譬如Watir对JS模态弹窗无法完美解决，这个
+问题可把我坑苦了，为此，我专门研究了win32api和window的事件驱动模型，悲剧的是，基于此工具任然没有彻底解决掉！累觉不爱。。。）。</p>
+
+<p>在学习Watir之前，我也简单听说过另外一个Web UI的开源自动化测试：Selenium，基于python语言的开源自动化测试工具。其原理是封装了一堆JS函数来修改页面的内容，当然还需要绕过同源策略等问题。
+而Watir驱动IE的原理比较绕，我不是很清楚，网上的资料大概是说由于IE基于COM组件，Watir实际上是驱动com对象实现和dom对象。而COM组件有复杂去了，就没有在深入下去。</p>
+
+<h3 id="二读书"><strong>二、读书</strong></h3>
+<p>这半年明显感觉是没有多少时间来静下心来认真读书，快餐式的阅读我觉得不适合深入理解技术类书籍。</p>
+
+<p>第一本：《Ruby元编程》</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/summary_2016/ruby_meta_prog.jpg" alt="qc" /></p>
+
+<p>善，每一个想深入理解Ruby语言的人都不应该轻易的错过此书。光看一下书的目录都足够让我兴奋。对象模型，块语法，类定义，模块混入等熟悉的概念在ruby中具有独特的设计，此书就想是一把瑞士军刀，
+剖析了ruby中诸多神秘的地方，语言的设计意图和思路非常清楚。后来又草草的看了另外一本：《松本行弘的程序世界》，不过感觉比较鸡肋，没有太多的惊喜。</p>
+
+<p>第二本：《JavaScript权威指南第4版》</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/summary_2016/javascrpt_guideline.jpg" alt="qc" /></p>
+
+<p>看这本书的原因是因为想学Nodejs，无奈Nodejs基于javascript语言，本宝无js语言基础，决定正面刚，一起学。。。于是决定先补补javascript语言基础，相中这本，果然好眼力，经典就是经典，很多困惑迎刃而解
+（讲道理，回调函数那部分写得真是很清楚了）。很多人觉得javascript的对象模型弄得三不像，同时很多人又觉得其是一个伟大的创新，我觉得凡事还是要包容些，即使基于原型的对象模型与主流的基于类的对象模型比起来是有那么一点另类，但是任然喜欢
+这种差异带来的冲击感。事实证明，js也确实很有生气。</p>
+
+<p>后来就开始开始尝试研究Nodejs，新颖而又漂亮，事件驱动和异步编程的概念也足够吸引人，对它很有期待，正在学习中。。。</p>
+
+<h3 id="三linux"><strong>三、Linux</strong></h3>
+<p>这半年确实花费了很多的业余事件在折腾Linux，准确的讲，从国庆假期开始到12月中旬，几乎所有的周末和下班回家都在学习Linux，没办法，本宝那段时间确实是很着迷，每天回家就想抓紧时间研究一会儿，否则感觉特空虚。。。
+其实现在想来，也无非就是会玩的命令多那么一点，装的软件多一点，会配置的东西多一点，能够简单的配置Apache和Bind，对Linux不再那么陌生，将之前在学校的理论知识活生生的在现了一遍，仅此而已，但这也足够让我提高不少。
+后来我还特地总结了那段时间学习Liux的学习笔记，共计3万多字，没有全部归纳，里面应有一些众所不周知的干货知识。见百度网盘地址:</p>
+
+<p><strong><em>链接: <a href="http://pan.baidu.com/s/1eSzcdn8">http://pan.baidu.com/s/1eSzcdn8</a> 密码：1ll5</em></strong></p>
+
+<h3 id="四2017年的几个目标"><strong>四、2017年的几个目标</strong></h3>
+
+<ul>
+  <li>
+    <p>锻炼，身体要紧</p>
+  </li>
+  <li>
+    <p>希望在TopCoder上实现点愿望</p>
+  </li>
+  <li>
+    <p>一次旅游，最好是香港</p>
+  </li>
+</ul>
+
+<h3 id="完"><strong>完</strong></h3>
+<!--内容-->
+  </article>
+</div>
+	
+				
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				
+				
+				<!-- start #sidebar -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						
+						<li>
+							<h2>Blogroll</h2>
+							<ul>
+								<li><a href="https://www.byvoid.com/">byvoid</a></li>
+								<li><a href="http://spaces.ac.cn/">scientific sapces</a></li>
+								<li><a href="http://zh.lucida.me/">Lucida</a></li>
+								<li><a href="http://www.xysay.com/">小媛在努力</a></li>
+	
+							</ul>
+						</li>
+						<li>
+							<h2>Share</h2>
+							<ul >
+								<li><a href="https://github.com/qcer">GitHub</a></li>
+								<li><a href="https://www.zhihu.com/people/qcer8421/activities">知乎</a></li>
+								<li><a href="http://weibo.com/5681541654/profile?topnav=1&wvr=6">微博</a></li>
+							</ul>
+							<p>Thanks for your visit!</p>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<!-- end #sidebar -->
+				
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+
+<div class="go-top">
+       <div class="arrow"></div>
+       <div class="stick"></div>
+</div>
+
+<script src="/blog/public/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/public/js/custom.js" type="text/javascript"></script>
+
+<!-- start #footer -->
+<div id="footer">
+	<p>Copyright (c) 2015. Design by <a href="https://github.com/qcer/">qcer</a>.</p>
+</div>
+<!-- end #footer -->
+
+</body>
+</html>

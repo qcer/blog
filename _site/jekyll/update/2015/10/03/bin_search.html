@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Regeneracy   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100529
+-->
+
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> Qcer</title>
+<link href="/blog/public/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/blog/public/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+
+</head>
+
+
+<body>
+<div id="wrapper">
+	<!-- start #header -->
+<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1 style="text-transform:capitalize"><a href="#"> Qcer  </a></h1>
+				<span>
+				<b><p>Sometimes you win,Sometimes you learn !</p></b>
+			</div>
+			<div id="menu">
+				<ul>
+					
+					
+						<li>
+							<a href="/blog/index.html ">Home</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/archive.html ">Archive</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/photos.html ">Photos</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/about.html ">About</a>
+						</li>			
+					
+					
+					
+					
+						<li>
+							<a href="/blog/contacts.html ">Contacts</a>
+						</li>			
+					
+					
+				</ul>
+			</div>
+		</div>
+</div>
+<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				
+					<div class="post">
+  <br>
+  <header class="post-header">
+    <h1 class="post-title">二分查找如何“花式”卖萌</h1>
+    <p class="post-meta">Oct 3, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>二分查找，敢说这货埋在土里化到灰里应该都是认得的。其原理思想也是如此的简单明了，敲代码时都懒得经过反射弧。但事实上，据Knuth神犇描述，第一个木有bug的二分查找是这个算法发表之后12年在出现，但后来发现还是存在一些数组越界的小问题。而如今，我们大都是开门见山的学习被前辈们优化证明的算法，这也是“牛逼顿”所谓的站在巨人的肩膀上，却也如此。</p>
+
+<p>回头来看二分查找如何“花式”卖萌。</p>
+
+<h4 id="problem"><strong>Problem：</strong></h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>给定一个有序数组A，且数组中的元素存在重复，各大一个目标值target，求目标值在数组的的下标的区间(即目标元素的起始下标和结束下标组成的区间)。
+</code></pre>
+</div>
+
+<p>　　eg：</p>
+
+<p>　　int a[9]={0, 1, 2, 3, 3, 3, 4, 5, 6 } ，给定target=3，则返回区间为[3 5].</p>
+
+<p>　　分析：显然这必然会用到二分查找的思想，但要稍作修改。只要分别找到左边界和右边界下标即可。</p>
+
+<h4 id="左边界"><strong>左边界</strong></h4>
+
+<p>　　版本一：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/bin_search/1.jpg" alt="qc" /></p>
+
+<p>　　版本二：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/bin_search/2.jpg" alt="qc" /></p>
+
+<p>　　事实上，二分寻找左区间闭着眼睛写都不会有bug的，但是右区间就有点搞笑了。</p>
+
+<h4 id="右边界"><strong>右边界</strong></h4>
+
+<p>　　版本一：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/bin_search/3.jpg" alt="qc" /></p>
+
+<p>　　嗯，这个版本也没有问题，真是幸福！！</p>
+
+<p>　　且慢，下面这个版本就显得有点任性了！</p>
+
+<p>　　版本二：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/bin_search/4.jpg" alt="qc" /></p>
+
+<p>　　运行之，死循环！应该说在某些情况下会死循环。</p>
+
+<p>　　哪里有问题呢？</p>
+
+<p>　　嗯，就是low=mid;的问题。</p>
+
+<p>　　为什么呢？</p>
+
+<p>　　因为当low+1等于high且a[mid]等于target时，mid等于low+(high-low)/2等于low;但是mid又赋值给了low，那么，结果是low和high都没有移动，“原地踏步”，循环往复。。。。。。</p>
+
+<p>　　所以，这个版本就虾米了!</p>
+
+<p>　　譬如：a1[9]={1,2,3,3,3,5,7,8,9};运行结果会死球！</p>
+
+<p>　　　　　a2[8]={1,3,3,3,5,7,8,9};运行结果会ok！</p>
+
+<p>　　另外，用二分思想求区间右边界的的思想在另外一个小算法中也有体现。———折半插入排序。</p>
+
+<p>　　折半插入排序可以在保证排序结果稳定的前提下，减少直接插入排序的寻找如入位置的时间，但相对直接插入排序而言，也仅仅是减少了寻找插入位置的时间。但其思想还是可借鉴滴！</p>
+
+<hr />
+<hr />
+<p>BY QCER</p>
+
+<h3 id="完"><strong>完</strong></h3>
+<!--内容-->
+  </article>
+</div>
+	
+				
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				
+				
+				<!-- start #sidebar -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						
+						<li>
+							<h2>Blogroll</h2>
+							<ul>
+								<li><a href="https://www.byvoid.com/">byvoid</a></li>
+								<li><a href="http://spaces.ac.cn/">scientific sapces</a></li>
+								<li><a href="http://zh.lucida.me/">Lucida</a></li>
+								<li><a href="http://www.xysay.com/">小媛在努力</a></li>
+	
+							</ul>
+						</li>
+						<li>
+							<h2>Share</h2>
+							<ul >
+								<li><a href="https://github.com/qcer">GitHub</a></li>
+								<li><a href="https://www.zhihu.com/people/qcer8421/activities">知乎</a></li>
+								<li><a href="http://weibo.com/5681541654/profile?topnav=1&wvr=6">微博</a></li>
+							</ul>
+							<p>Thanks for your visit!</p>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<!-- end #sidebar -->
+				
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+
+<div class="go-top">
+       <div class="arrow"></div>
+       <div class="stick"></div>
+</div>
+
+<script src="/blog/public/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/public/js/custom.js" type="text/javascript"></script>
+
+<!-- start #footer -->
+<div id="footer">
+	<p>Copyright (c) 2015. Design by <a href="https://github.com/qcer/">qcer</a>.</p>
+</div>
+<!-- end #footer -->
+
+</body>
+</html>

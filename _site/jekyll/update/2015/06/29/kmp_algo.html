@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Regeneracy   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100529
+-->
+
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> Qcer</title>
+<link href="/blog/public/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/blog/public/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+
+</head>
+
+
+<body>
+<div id="wrapper">
+	<!-- start #header -->
+<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1 style="text-transform:capitalize"><a href="#"> Qcer  </a></h1>
+				<span>
+				<b><p>Sometimes you win,Sometimes you learn !</p></b>
+			</div>
+			<div id="menu">
+				<ul>
+					
+					
+						<li>
+							<a href="/blog/index.html ">Home</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/archive.html ">Archive</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/photos.html ">Photos</a>
+						</li>			
+					
+					
+					
+						<li>
+							<a href="/blog/about.html ">About</a>
+						</li>			
+					
+					
+					
+					
+						<li>
+							<a href="/blog/contacts.html ">Contacts</a>
+						</li>			
+					
+					
+				</ul>
+			</div>
+		</div>
+</div>
+<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				
+					<div class="post">
+  <br>
+  <header class="post-header">
+    <h1 class="post-title">KMP算法细节探索</h1>
+    <p class="post-meta">Jun 29, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="preface"><strong>preface：</strong></h3>
+<p>　　想必，很多人都知道D.E.Knuth与V.R.Pratt和J.H.Morris同时提出所谓的狂拽酷炫屌炸天的KMP算法，在对字符串的匹配(或是字符串的查找)方面表现出比较好的效率，该算法对Brute-Force算法的较大改进，具体地讲就是消除了主串指针的回溯，从而使匹配的时间复杂度从O(N2)降低到O(N+M)(N为文本串的长度，M为模式串长度)。其传神之处在于在于针对模式串构造的一个Nest[]数组(该数组只与模式串有关)。</p>
+
+<h3 id="keyword"><strong>keyword：</strong></h3>
+<p>　　KMP算法、增强KMP算法</p>
+
+<p>　　(扯完了蛋，进入主题。)</p>
+
+<hr />
+<hr />
+
+<h4 id="q1前缀字符串与后缀字符串"><strong>Q1：前缀字符串与后缀字符串</strong></h4>
+
+<p>　　 A：对于某一字符串来说，约定从第一个字符开始向后的连续若干长度的字符串为前缀字符串，同理从最后一个字符开始向前的连续若干长度的字符串为后缀字符串</p>
+
+<p>case 1：对于字符串“qcer”而言，”qc“为长度为2的前缀字符串，”er“为长度为2的后缀字符串。特殊的，“qcer”既是前缀字符串又是后缀字符串。</p>
+
+<h4 id="q2nest数组为何物"><strong>Q2：Nest[]数组为何物？</strong></h4>
+
+<p>　　A：Nest[k]定义为在模式串中下标为K位置的前面所有字符串中所有前缀字符串与后缀字符串相等的情况中最长的匹配长度。but，如这等让你我眩晕的表达，不看也罢！一图胜前言！</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/1.jpg" alt="qc" /></p>
+
+<p>对于Nest[2]，下标为2即字符‘c’前面的字符串为“ca”，故没有前缀字符串与后缀字符串想的的情况，其值当然为0。</p>
+
+<p>对于Nest[3]，下标32即字符‘l’前面的部分为“cac”，故只有前缀字符串“c”与后缀字符串“c”，其值为1。</p>
+
+<p>其实这个空降的Nest[]数组是很不地道的，既是理解了定义，掌握了其求解方法，还是很没底。而且这TM似乎并没有什么*用，其实不然！</p>
+
+<p>So，下面再给出一种通用的理解方式：</p>
+
+<p>对于求Nest[7]的值，更直观的过程可以如下图：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/2.jpg" alt="qc" /></p>
+
+<p>　　即把字符串下标为7即字符‘m’之前的字符串“cacldca”从右往左部逐步推进，整个过程在步骤2位置取得正确的值2。步骤3到步骤6中任意一步重叠部分均不能完全匹配(如果有重叠部分完全匹配的情况，那么必然其值比2大)。故不能取到比2更大的值。</p>
+
+<p>首先，理解这个过程度对后面核心算法的匹配过程相当重要。其次，真正求Nest[]数组的值当然不会用这样”too naive“的方法。</p>
+
+<p>　　如果匹配的过程看做模式串从主串的开始处向右”移动“+匹配的过程，那么KMP不在只是逐步移动，而且还能”跨越式“移动。</p>
+
+<h4 id="q3kmp算法为什么能实现跨越式移动的原理"><strong>Q3：KMP算法为什么能实现”跨越式“移动的原理？</strong></h4>
+
+<p>　　A：先上图！</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/3.jpg" alt="qc" /></p>
+
+<p>　　位置1中，n和m不等，直接跨越过4个字符到位置2处，中间都不用比较就知道不会有匹配成功情况。但是这样做的底气何在？？再上图！</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/4.jpg" alt="qc" /></p>
+
+<p>　　因为在位置3到位置6之间绝对不会出现从跌部分想匹配的情况，如果出现那么Nest[7]的值将定会是一个比2大的数，这与Nest[]的定义是相悖的，所以处理3到6的步骤可以自信地省略有木有！！</p>
+
+<h4 id="q4nest数组酷炫的解法"><strong>Q4：Nest[]数组酷炫的解法？</strong></h4>
+
+<p>　　A：想想！还是上图！</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/5.jpg" alt="qc" /></p>
+
+<p>　　k为位置j的最长前、后缀匹配串3的下一个位置，同理，m为k的最长前、后缀匹配串1的下一个位置。</p>
+
+<p>　　Nest[j]已知，即对j位置前面的所有串，前缀串3和后缀串4相等且最长；k在j前面，Nest[k]也已知，同理，k前面的所有串，前缀串1和后缀串2相等且最长。</p>
+
+<p>　　求Nest[i]分两种情况：</p>
+
+<p>　　1) arr[k] = arr[j];Nest[i] = Nest[j]+1;这是显然的。</p>
+
+<p>　　2) arr[k] != arr[j];</p>
+
+<p>　　这时需要我们稍作分析：因为串3=串4，串1=串2，对应必然有，串5=串6，所以必有，串1=串2=串5=串6。</p>
+
+<p>　　到目前为止由已知只能推出串1=串6，所以，在此基础上尝试扩展串，即判断arr[m]是否等于arr[j]。有趣的此时有分情况两种情况:</p>
+
+<p>　　1) arr[m = arr[j];Nest[i] = Nest[m]+1;这是显然的。</p>
+
+<p>　　2) arr[m != arr[j];这又是个很BUG的问题，继续在往前推呗！</p>
+
+<p>　　也许聪明的你已经明白，没错，递归求解是正解！时间复杂度O(m)(m为模式串长度)。</p>
+
+<p>　　Code：</p>
+
+<p><img src="https://qcer.github.io/blog/images_blog/kmp_algo/6.jpg" alt="qc" /></p>
+
+<h3 id="完"><strong>完</strong></h3>
+<!--内容-->
+  </article>
+</div>
+	
+				
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				
+				
+				<!-- start #sidebar -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						
+						<li>
+							<h2>Blogroll</h2>
+							<ul>
+								<li><a href="https://www.byvoid.com/">byvoid</a></li>
+								<li><a href="http://spaces.ac.cn/">scientific sapces</a></li>
+								<li><a href="http://zh.lucida.me/">Lucida</a></li>
+								<li><a href="http://www.xysay.com/">小媛在努力</a></li>
+	
+							</ul>
+						</li>
+						<li>
+							<h2>Share</h2>
+							<ul >
+								<li><a href="https://github.com/qcer">GitHub</a></li>
+								<li><a href="https://www.zhihu.com/people/qcer8421/activities">知乎</a></li>
+								<li><a href="http://weibo.com/5681541654/profile?topnav=1&wvr=6">微博</a></li>
+							</ul>
+							<p>Thanks for your visit!</p>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<!-- end #sidebar -->
+				
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+
+<div class="go-top">
+       <div class="arrow"></div>
+       <div class="stick"></div>
+</div>
+
+<script src="/blog/public/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/public/js/custom.js" type="text/javascript"></script>
+
+<!-- start #footer -->
+<div id="footer">
+	<p>Copyright (c) 2015. Design by <a href="https://github.com/qcer/">qcer</a>.</p>
+</div>
+<!-- end #footer -->
+
+</body>
+</html>
