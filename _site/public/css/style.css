@@ -99,6 +99,30 @@ a:hover {
 	color: #FFFFFF;
 }
 
+/*circle*/
+#leftcircle {
+float: left;
+/*margin: -20px;*/
+margin-left:-120px;
+margin-right:12px;
+padding: 0px 10px 0px 0px;
+color: #787878;
+}
+#mycircle {
+	border-radius: 80%;
+	background-color: #BFEFFF;
+	/* 宽度和高度需要相等 */
+	width: 75px;
+	height: 75px; 
+	border: 15px solid #63B8FF;
+	text-align: center;
+	/*line-height: 10px; */
+}
+#mycircle p {
+	line-height: 110%;
+	font-weight: bold;
+}
+
 /* Search */
 
 #search {
