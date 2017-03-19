@@ -18,7 +18,7 @@ $(function () {
       // body...
       var pvcountObj = {pvcount:null};
       var url = "";
-      if (window.location.pathname == "/blog/index.html"){
+      if (window.location.pathname == "/blog/"){
          url = "http://cloud.bmob.cn/fc3679511e55f464/getVisitCount";
       }else{
          url = "http://cloud.bmob.cn/fc3679511e55f464/getCurrPV";
@@ -30,8 +30,9 @@ $(function () {
           dataType:'jsonp', 
           data:'',
           jsonp:'callback', 
-          success: function(result) {
-             pvcountObj.pvcount= result;
+          success: function(data) {
+            console.log(data.pageView);
+             pvcountObj.pvcount= data.pageView;
           }      
       });
       var visitcount_vm = new Vue({
