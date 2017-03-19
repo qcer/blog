@@ -25,7 +25,7 @@ $(function () {
       }
       $.ajax({ 
           url:url,  
-          type: "post",
+          type: "GET",
           contentType:"application/json; charset=utf-8",
           dataType:'jsonp', 
           data:'',
