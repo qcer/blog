@@ -18,10 +18,10 @@ $(function () {
       // body...
       var pvcountObj = {pvcount:null};
       var url = "";
-      if (window.location.pathname == "/blog/"){
-         url = "http://cloud.bmob.cn/fc3679511e55f464/getVisitCount";
+      if (window.location.pathname == "/blog/index.html"){
+         url = "https://cloud.bmob.cn/fc3679511e55f464/getVisitCount";
       }else{
-         url = "http://cloud.bmob.cn/fc3679511e55f464/getCurrPV";
+         url = "https://cloud.bmob.cn/fc3679511e55f464/getCurrPV";
       }
       $.ajax({ 
           url:url,  
