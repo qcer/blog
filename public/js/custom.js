@@ -19,7 +19,7 @@ $(function () {
       var pvcountObj = {pvcount:null};
       var url = "";
       var pathname = window.location.pathname;
-      if (pathname == "/blog/index.html" || pathname == "/blog/"){
+      if (pathname == "/blog/"){
          url = "https://cloud.bmob.cn/fc3679511e55f464/getVisitCount";
       }else{
          url = "https://cloud.bmob.cn/fc3679511e55f464/getCurrPV";
