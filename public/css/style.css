@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.0em;
+	font-size: 1.6em;
 }
 
 p, ul, ol {
@@ -206,15 +206,24 @@ a:hover {
 }
 
 .post .title {
-	height: 41px;
-	padding: 7px 0px 0px 30px;
+	color: #009ACD;
+	height: 35px;
+	padding: 0px 0px 0px 30px;
 	letter-spacing: -.5px;
 }
 
 .post .title a {
-	color: #333333;
 	border: none;
-	font-size: 28px;
+	font-size: 24px;
+	font-weight:600;
+}
+
+.post .title a:hover {
+	text-decoration: underline;
+	color: #00CDCD;
+	border: none;
+	font-size: 24px;
+	font-weight:600;
 }
 
 .post .meta {
@@ -239,13 +248,13 @@ a:hover {
 }
 
 .post .entry {
-	padding: 0px 30px 20px 30px;
-	padding-bottom: 20px;
+	padding: 0px 20px 20px 30px;
+	padding-bottom: 10px;
 	text-align: justify;
 }
 
 .links {
-	padding-top: 20px;
+	padding-top: 0px;
 	font-size: 12px;
 	font-weight: bold;
 }
@@ -294,6 +303,7 @@ a:hover {
 #sidebar li li a {
 	padding: 0px 0px 0px 15px;
 	background: url(../img/img01.jpg) no-repeat left 5px;
+	font-weight:600;
 }
 
 #sidebar h2 {
