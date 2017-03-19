@@ -4,7 +4,7 @@ layout: default
 
 					{% for post in site.posts %}
 					<div class="post">
-						<h2 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+						<h3 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 						<p class="meta"><span class="date">{{ post.date | date: "%b %-d, %Y " }}</span><span class="posted">Posted by  <a href="#">qcer</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
