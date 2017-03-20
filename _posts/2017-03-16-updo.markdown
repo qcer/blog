@@ -37,7 +37,7 @@ public/:存放静态文件的目录（css文件，js文件，图片）。
 
 详细功能点描述:
 
-## **1、左侧导航栏选中背景加深**
+### **1、左侧导航栏选中背景加深**
 
 
 这部分实现是简单粗暴，借助jQuery选择器遍历id为main-name下面的li标签当li标签的子标签a的href属性等于当前页面的href时，首先去除兄弟li标签的active类，再添加当前li标签的class为active。
@@ -48,7 +48,7 @@ public/:存放静态文件的目录（css文件，js文件，图片）。
 
 ![qc](https://qcer.github.io/blog/images_blog/updo/left_nav.png)
 
-## **2、文件列表实现**
+### **2、文件列表实现**
 
 后台:
 
@@ -86,7 +86,7 @@ fileDownload()方法则直接一文件名作为一个参数，拼接一个url，
 
 ![qc](https://qcer.github.io/blog/images_blog/updo/download_serve.png)
 
-## **3、文件拖拽上传**
+### **3、文件拖拽上传**
 
 前端：
 
@@ -104,7 +104,7 @@ fileDownload()方法则直接一文件名作为一个参数，拼接一个url，
 
 后端通过psot方法接受数据，并通过multiparty第三方模块接解析数据，将前端发送过里的文件以一个随即字符串作为文件名存放在freedom/upload/目录下，在调用fs的renameSync方法更改为正确的文件名，最后记得调用res.end()结束传输连接，否则前端页面一直处于等待状态。
 
-## **4、白板复制粘贴的功能**
+### **4、白板复制粘贴的功能**
 
 前端：
 
@@ -134,7 +134,7 @@ fileDownload()方法则直接一文件名作为一个参数，拼接一个url，
 
 ![qc](https://qcer.github.io/blog/images_blog/updo/addrow_js.png)
 
-## **5、一键返回顶部功能**
+### **5、一键返回顶部功能**
 
 ![qc](https://qcer.github.io/blog/images_blog/updo/go-to-top.png)
 
