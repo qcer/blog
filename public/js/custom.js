@@ -31,6 +31,7 @@ $(function () {
           dataType:'jsonp', 
           data:'',
           jsonp:'callback', 
+          // jsonpCallback:"mymethod",
           success: function(data) {
              pvcountObj.pvcount= data.pageView;
           }      
